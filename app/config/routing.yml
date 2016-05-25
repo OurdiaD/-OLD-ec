@@ -1,0 +1,10 @@
+product:
+    resource: "@ProductBundle/Resources/config/routing.yml"
+    prefix:   /product
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+home:
+    path: /
+    defaults: { _controller: AppBundle:Default:index }

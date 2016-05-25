@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+{{ dump(products) }}
+    <h1>Produits dans {{ products[0].category }}</h1>
+    <table>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Titre
+            </th>
+            <th>
+                Quantité
+            </th>
+        </tr>
+        {% for product in products %}
+            <tr>
+                <td>
+                    {{ product.id }}
+                </td>
+                <td>
+                    {{ product.titre }}
+                </td>
+                <td>
+                    {{ product.quantity }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('category') }}">
+                Categories
+            </a>
+        </li>
+    </ul>
+
+{% endblock %}

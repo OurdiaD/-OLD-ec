@@ -1,0 +1,88 @@
+# quiz_index_homepage:
+#     path:     /hello/{name}
+#     defaults: { _controller: QuizIndexBundle:Default:index }
+
+product:
+    path:   /
+    defaults: {_controller: ProductBundle:Product:index}
+    requirements:
+        _method:  GET
+
+product_create:
+    path: /
+    defaults: {_controller: ProductBundle:Product:create}
+    requirements:
+        _method:  POST
+
+product_new:
+    path: /new
+    defaults: {_controller: ProductBundle:Product:new}
+    requirements:
+        _method:  GET
+
+product_show:
+    path: /{id}
+    defaults: {_controller: ProductBundle:Product:show}
+    requirements:
+        _method:  GET
+        id: \d*
+
+product_edit:
+    path: /{id}/edit
+    defaults: {_controller: ProductBundle:Product:edit}
+    requirements:
+        _method:  GET
+        id: \d*
+
+product_update:
+    path: /{id}
+    defaults: {_controller: ProductBundle:Product:update}
+    requirements:
+        _method:  PUT
+        id: \d*
+
+product_delete:
+    path: /{id}
+    defaults: {_controller: ProductBundle:Product:delete}
+    requirements:
+        id: \d*
+
+category:
+   path: /category
+   defaults: {_controller: ProductBundle:Category:index}
+   requirements:
+       _method:  GET
+
+category_create:
+   path: /category
+   defaults: {_controller: ProductBundle:Category:create}
+   requirements:
+       _method:  POST
+
+category_new:
+   path: /category/new
+   defaults: {_controller: ProductBundle:Category:new}
+   requirements:
+       _method:  GET
+
+category_show:
+   path: /category/{id}
+   defaults: {_controller: ProductBundle:Category:show}
+   requirements:
+       _method:  GET
+
+category_edit:
+   path: /category/{id}/edit
+   defaults: {_controller: ProductBundle:Category:edit}
+   requirements:
+       _method:  GET
+
+category_update:
+   path: /category/{id}
+   defaults: {_controller: ProductBundle:Category:update}
+   requirements:
+       _method:  PUT
+
+category_delete:
+   path: /category/{id}
+   defaults: {_controller: ProductBundle:Category:delete}

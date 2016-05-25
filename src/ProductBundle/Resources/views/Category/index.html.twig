@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<h1>Category</h1>
+<table>
+        {% for entity in entities %}
+            <tr>
+            <td>{{ entity.name }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('category_show', { 'id': entity.id }) }}">Produits Associés</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('category_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+</table>
+
+<ul>
+        <li>
+            <a href="{{ path('category_new') }}">
+                Ajouter une Categorie
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('product') }}">
+                Retour a l'acceuil
+            </a>
+        </li>
+    </ul>
+{% endblock %}
